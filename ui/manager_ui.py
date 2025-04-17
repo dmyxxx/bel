@@ -56,6 +56,7 @@ class ManagerUI(QDialog):
         order_id = self.orders_table.item(selected_row, 0).text()
         new_status = self.status_combo.currentText()
 
+<<<<<<< HEAD
         # Проверка на валидность изменения статуса
         current_status = self.orders_table.item(selected_row, 3).text()
         if current_status == "Новый" and new_status == "Готов":
@@ -66,6 +67,8 @@ class ManagerUI(QDialog):
             QMessageBox.warning(self, "Ошибка", "Невозможно сразу выбрать статус 'Получен'. Выберите сначала 'Готов'.")
             return
 
+=======
+>>>>>>> da5dab4 (final)
         # Обновление статуса
         self.db.update_order_status(order_id, new_status)
         self.update_orders_table()

@@ -13,6 +13,7 @@ class Database:
         )
         self.cursor = self.conn.cursor(dictionary=True)
 
+<<<<<<< HEAD
     def fetchone(self, query, params=()):
         """Выполнить SELECT запрос и вернуть одну запись"""
         self.cursor.execute(query, params)
@@ -73,3 +74,8 @@ class Database:
         elif total_spent > 100000:
             return 0.05
         return 0
+=======
+    def fetchall(self, query, params=None):
+        self.cursor.execute(query, params or ())
+        return self.cursor.fetchall()
+>>>>>>> da5dab4 (final)
